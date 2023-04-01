@@ -20,9 +20,9 @@ stages:
     - script: dotnet build --configuration $(buildConfiguration)
       displayName: 'dotnet build $(buildConfiguration)'
 
-- stage: Deploy
+- stage: Publish
   jobs:
-  - job: Deploy
+  - job: Publish
     steps:
     - publish: $(System.DefaultWorkingDirectory)/bin/WebApp
       artifact: WebApp
